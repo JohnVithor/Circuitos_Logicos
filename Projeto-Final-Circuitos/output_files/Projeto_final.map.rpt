@@ -1,0 +1,863 @@
+Analysis & Synthesis report for Projeto_final
+Sat Dec 02 11:05:57 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0|altsyncram_r881:auto_generated
+ 14. Source assignments for ram_valores:M_VAL|altsyncram:ram_image_rtl_0|altsyncram_bbe1:auto_generated
+ 15. Parameter Settings for User Entity Instance: ram_valores:M_VAL
+ 16. Parameter Settings for User Entity Instance: ram_comandos:INTRUCOES
+ 17. Parameter Settings for Inferred Entity Instance: ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0
+ 18. Parameter Settings for Inferred Entity Instance: ram_valores:M_VAL|altsyncram:ram_image_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "modulo_saida:M_Saida"
+ 21. Port Connectivity Checks: "Registrador:ULA_REG_R"
+ 22. Port Connectivity Checks: "ULA:Unid_LA"
+ 23. Port Connectivity Checks: "Registrador:ULA_REG_B"
+ 24. Port Connectivity Checks: "Registrador:ULA_REG_A"
+ 25. Port Connectivity Checks: "ram_comandos:INTRUCOES"
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Dec 02 11:05:57 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; Projeto_final                              ;
+; Top-level Entity Name              ; Projeto_final                              ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 727                                        ;
+;     Total combinational functions  ; 593                                        ;
+;     Dedicated logic registers      ; 229                                        ;
+; Total registers                    ; 229                                        ;
+; Total pins                         ; 99                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 2,097,152                                  ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; Projeto_final      ; Projeto_final      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                   ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                    ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                   ; Library ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; Modulos/MEMO_VAL/ram_valores.vhd                    ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/MEMO_VAL/ram_valores.vhd                    ;         ;
+; Modulos/MEMO_COM/ram_comandos.vhd                   ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/MEMO_COM/ram_comandos.vhd                   ;         ;
+; Modulos/ACESS_MEMO/memory_acess.vhd                 ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/ACESS_MEMO/memory_acess.vhd                 ;         ;
+; Modulos/ULA/ULA.vhd                                 ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/ULA/ULA.vhd                                 ;         ;
+; Modulos/ULA/FA.vhd                                  ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/ULA/FA.vhd                                  ;         ;
+; Modulos/ULA/EL.vhd                                  ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/ULA/EL.vhd                                  ;         ;
+; Modulos/ULA/EA.vhd                                  ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/ULA/EA.vhd                                  ;         ;
+; Modulos/ULA/deslocador.vhd                          ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/ULA/deslocador.vhd                          ;         ;
+; Modulos/MOD_SAI/Modulo_saida.vhd                    ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/MOD_SAI/Modulo_saida.vhd                    ;         ;
+; Modulos/MOD_ENT/modulo_entrada.vhd                  ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/MOD_ENT/modulo_entrada.vhd                  ;         ;
+; Modulos/DISPLAY/Display_G.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_G.vhd                       ;         ;
+; Modulos/DISPLAY/Display_F.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_F.vhd                       ;         ;
+; Modulos/DISPLAY/Display_E.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_E.vhd                       ;         ;
+; Modulos/DISPLAY/Display_D.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_D.vhd                       ;         ;
+; Modulos/DISPLAY/Display_C.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_C.vhd                       ;         ;
+; Modulos/DISPLAY/Display_B.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_B.vhd                       ;         ;
+; Modulos/DISPLAY/Display_A.vhd                       ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display_A.vhd                       ;         ;
+; Modulos/DISPLAY/Display.vhd                         ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/DISPLAY/Display.vhd                         ;         ;
+; Modulos/BANCO_REG/Registrador.vhd                   ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/BANCO_REG/Registrador.vhd                   ;         ;
+; Modulos/BANCO_REG/Banco_Reg.vhd                     ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Modulos/BANCO_REG/Banco_Reg.vhd                     ;         ;
+; Projeto_final.vhd                                   ; yes             ; User VHDL File                                        ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/Projeto_final.vhd                                   ;         ;
+; altsyncram.tdf                                      ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
+; stratix_ram_block.inc                               ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
+; lpm_mux.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
+; lpm_decode.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                                  ;         ;
+; aglobal130.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                                  ;         ;
+; a_rdenreg.inc                                       ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                                   ;         ;
+; altrom.inc                                          ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
+; altram.inc                                          ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                                      ;         ;
+; altdpram.inc                                        ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
+; db/altsyncram_r881.tdf                              ; yes             ; Auto-Generated Megafunction                           ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/altsyncram_r881.tdf                              ;         ;
+; db/projeto_final.ram0_ram_comandos_617c3cb3.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/projeto_final.ram0_ram_comandos_617c3cb3.hdl.mif ;         ;
+; db/decode_k8a.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/decode_k8a.tdf                                   ;         ;
+; db/mux_qob.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/mux_qob.tdf                                      ;         ;
+; db/altsyncram_bbe1.tdf                              ; yes             ; Auto-Generated Megafunction                           ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/altsyncram_bbe1.tdf                              ;         ;
+; db/projeto_final.ram0_ram_valores_2dfd8cc9.hdl.mif  ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/projeto_final.ram0_ram_valores_2dfd8cc9.hdl.mif  ;         ;
+; db/decode_rsa.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; J:/Codigos BTI/LCL/Projeto-Final-Circuitos/db/decode_rsa.tdf                                   ;         ;
++-----------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 727       ;
+;                                             ;           ;
+; Total combinational functions               ; 593       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 452       ;
+;     -- 3 input functions                    ; 116       ;
+;     -- <=2 input functions                  ; 25        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 578       ;
+;     -- arithmetic mode                      ; 15        ;
+;                                             ;           ;
+; Total registers                             ; 229       ;
+;     -- Dedicated logic registers            ; 229       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 99        ;
+; Total memory bits                           ; 2097152   ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 485       ;
+; Total fan-out                               ; 7173      ;
+; Average fan-out                             ; 5.62      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Projeto_final                            ; 593 (174)         ; 229 (0)      ; 2097152     ; 0            ; 0       ; 0         ; 99   ; 0            ; |Projeto_final                                                                                                         ;              ;
+;    |Banco_Reg:B_REG|                      ; 72 (64)           ; 128 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG                                                                                         ;              ;
+;       |Registrador:i0|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i0                                                                          ;              ;
+;       |Registrador:i1|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i1                                                                          ;              ;
+;       |Registrador:i2|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i2                                                                          ;              ;
+;       |Registrador:i3|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i3                                                                          ;              ;
+;       |Registrador:i4|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i4                                                                          ;              ;
+;       |Registrador:i5|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i5                                                                          ;              ;
+;       |Registrador:i6|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i6                                                                          ;              ;
+;       |Registrador:i7|                    ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Banco_Reg:B_REG|Registrador:i7                                                                          ;              ;
+;    |Registrador:ULA_REG_A|                ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Registrador:ULA_REG_A                                                                                   ;              ;
+;    |Registrador:ULA_REG_B|                ; 7 (7)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Registrador:ULA_REG_B                                                                                   ;              ;
+;    |Registrador:ULA_REG_R|                ; 21 (21)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|Registrador:ULA_REG_R                                                                                   ;              ;
+;    |ULA:Unid_LA|                          ; 105 (4)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA                                                                                             ;              ;
+;       |EA:a0|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a0                                                                                       ;              ;
+;       |EA:a10|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a10                                                                                      ;              ;
+;       |EA:a11|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a11                                                                                      ;              ;
+;       |EA:a12|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a12                                                                                      ;              ;
+;       |EA:a13|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a13                                                                                      ;              ;
+;       |EA:a14|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a14                                                                                      ;              ;
+;       |EA:a15|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a15                                                                                      ;              ;
+;       |EA:a1|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a1                                                                                       ;              ;
+;       |EA:a2|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a2                                                                                       ;              ;
+;       |EA:a3|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a3                                                                                       ;              ;
+;       |EA:a4|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a4                                                                                       ;              ;
+;       |EA:a5|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a5                                                                                       ;              ;
+;       |EA:a6|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a6                                                                                       ;              ;
+;       |EA:a7|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a7                                                                                       ;              ;
+;       |EA:a8|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a8                                                                                       ;              ;
+;       |EA:a9|                             ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EA:a9                                                                                       ;              ;
+;       |EL:l0|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l0                                                                                       ;              ;
+;       |EL:l10|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l10                                                                                      ;              ;
+;       |EL:l11|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l11                                                                                      ;              ;
+;       |EL:l12|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l12                                                                                      ;              ;
+;       |EL:l13|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l13                                                                                      ;              ;
+;       |EL:l14|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l14                                                                                      ;              ;
+;       |EL:l15|                            ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l15                                                                                      ;              ;
+;       |EL:l1|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l1                                                                                       ;              ;
+;       |EL:l2|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l2                                                                                       ;              ;
+;       |EL:l3|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l3                                                                                       ;              ;
+;       |EL:l4|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l4                                                                                       ;              ;
+;       |EL:l5|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l5                                                                                       ;              ;
+;       |EL:l6|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l6                                                                                       ;              ;
+;       |EL:l7|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l7                                                                                       ;              ;
+;       |EL:l8|                             ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l8                                                                                       ;              ;
+;       |EL:l9|                             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|EL:l9                                                                                       ;              ;
+;       |FA:s0|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s0                                                                                       ;              ;
+;       |FA:s10|                            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s10                                                                                      ;              ;
+;       |FA:s11|                            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s11                                                                                      ;              ;
+;       |FA:s12|                            ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s12                                                                                      ;              ;
+;       |FA:s13|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s13                                                                                      ;              ;
+;       |FA:s14|                            ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s14                                                                                      ;              ;
+;       |FA:s15|                            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s15                                                                                      ;              ;
+;       |FA:s1|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s1                                                                                       ;              ;
+;       |FA:s2|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s2                                                                                       ;              ;
+;       |FA:s3|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s3                                                                                       ;              ;
+;       |FA:s4|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s4                                                                                       ;              ;
+;       |FA:s5|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s5                                                                                       ;              ;
+;       |FA:s6|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s6                                                                                       ;              ;
+;       |FA:s7|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s7                                                                                       ;              ;
+;       |FA:s8|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s8                                                                                       ;              ;
+;       |FA:s9|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|FA:s9                                                                                       ;              ;
+;       |deslocador:d0|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ULA:Unid_LA|deslocador:d0                                                                               ;              ;
+;    |memory_acess:M_ACESS|                 ; 66 (66)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|memory_acess:M_ACESS                                                                                    ;              ;
+;    |modulo_saida:M_Saida|                 ; 29 (0)            ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida                                                                                    ;              ;
+;       |Display:dS0|                       ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0                                                                        ;              ;
+;          |Display_A:i0|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_A:i0                                                           ;              ;
+;          |Display_B:i1|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_B:i1                                                           ;              ;
+;          |Display_C:i2|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_C:i2                                                           ;              ;
+;          |Display_D:i3|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_D:i3                                                           ;              ;
+;          |Display_E:i4|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_E:i4                                                           ;              ;
+;          |Display_F:i5|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_F:i5                                                           ;              ;
+;          |Display_G:i6|                   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS0|Display_G:i6                                                           ;              ;
+;       |Display:dS1|                       ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1                                                                        ;              ;
+;          |Display_A:i0|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_A:i0                                                           ;              ;
+;          |Display_B:i1|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_B:i1                                                           ;              ;
+;          |Display_C:i2|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_C:i2                                                           ;              ;
+;          |Display_D:i3|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_D:i3                                                           ;              ;
+;          |Display_E:i4|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_E:i4                                                           ;              ;
+;          |Display_F:i5|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_F:i5                                                           ;              ;
+;          |Display_G:i6|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS1|Display_G:i6                                                           ;              ;
+;       |Display:dS2|                       ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2                                                                        ;              ;
+;          |Display_A:i0|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_A:i0                                                           ;              ;
+;          |Display_B:i1|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_B:i1                                                           ;              ;
+;          |Display_C:i2|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_C:i2                                                           ;              ;
+;          |Display_D:i3|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_D:i3                                                           ;              ;
+;          |Display_E:i4|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_E:i4                                                           ;              ;
+;          |Display_F:i5|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_F:i5                                                           ;              ;
+;          |Display_G:i6|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS2|Display_G:i6                                                           ;              ;
+;       |Display:dS3|                       ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3                                                                        ;              ;
+;          |Display_A:i0|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_A:i0                                                           ;              ;
+;          |Display_B:i1|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_B:i1                                                           ;              ;
+;          |Display_C:i2|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_C:i2                                                           ;              ;
+;          |Display_D:i3|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_D:i3                                                           ;              ;
+;          |Display_E:i4|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_E:i4                                                           ;              ;
+;          |Display_F:i5|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_F:i5                                                           ;              ;
+;          |Display_G:i6|                   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|modulo_saida:M_Saida|Display:dS3|Display_G:i6                                                           ;              ;
+;    |ram_comandos:INTRUCOES|               ; 104 (0)           ; 3 (0)        ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_comandos:INTRUCOES                                                                                  ;              ;
+;       |altsyncram:ram_image_rtl_0|        ; 104 (0)           ; 3 (0)        ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0                                                       ;              ;
+;          |altsyncram_r881:auto_generated| ; 104 (0)           ; 3 (3)        ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0|altsyncram_r881:auto_generated                        ;              ;
+;             |decode_k8a:rden_decode|      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0|altsyncram_r881:auto_generated|decode_k8a:rden_decode ;              ;
+;             |mux_qob:mux2|                ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0|altsyncram_r881:auto_generated|mux_qob:mux2           ;              ;
+;    |ram_valores:M_VAL|                    ; 15 (0)            ; 3 (0)        ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_valores:M_VAL                                                                                       ;              ;
+;       |altsyncram:ram_image_rtl_0|        ; 15 (0)            ; 3 (0)        ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_valores:M_VAL|altsyncram:ram_image_rtl_0                                                            ;              ;
+;          |altsyncram_bbe1:auto_generated| ; 15 (0)            ; 3 (3)        ; 1048576     ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_valores:M_VAL|altsyncram:ram_image_rtl_0|altsyncram_bbe1:auto_generated                             ;              ;
+;             |decode_k8a:rden_decode|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_valores:M_VAL|altsyncram:ram_image_rtl_0|altsyncram_bbe1:auto_generated|decode_k8a:rden_decode      ;              ;
+;             |decode_rsa:decode3|          ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Projeto_final|ram_valores:M_VAL|altsyncram:ram_image_rtl_0|altsyncram_bbe1:auto_generated|decode_rsa:decode3          ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                             ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+-----------------------------------------------------+
+; Name                                                                                        ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                                 ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+-----------------------------------------------------+
+; ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0|altsyncram_r881:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 65536        ; 16           ; --           ; --           ; 1048576 ; db/Projeto_final.ram0_ram_comandos_617c3cb3.hdl.mif ;
+; ram_valores:M_VAL|altsyncram:ram_image_rtl_0|altsyncram_bbe1:auto_generated|ALTSYNCRAM      ; AUTO ; Single Port ; 65536        ; 16           ; --           ; --           ; 1048576 ; db/Projeto_final.ram0_ram_valores_2dfd8cc9.hdl.mif  ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; modulo_saida:M_Saida|LED_Alg          ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 229   ;
+; Number of registers using Synchronous Clear  ; 23    ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 176   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                         ;
++--------------------------------------+----------------------------------------+------+
+; Register Name                        ; Megafunction                           ; Type ;
++--------------------------------------+----------------------------------------+------+
+; ram_comandos:INTRUCOES|data_o[0..15] ; ram_comandos:INTRUCOES|ram_image_rtl_0 ; RAM  ;
+; ram_valores:M_VAL|data_o[0..15]      ; ram_valores:M_VAL|ram_image_rtl_0      ; RAM  ;
++--------------------------------------+----------------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |Projeto_final|Registrador:ULA_REG_B|saida_r[2]             ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |Projeto_final|Registrador:ULA_REG_R|saida_r[5]             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Projeto_final|memory_acess:M_ACESS|constador_instrucoes[5] ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 4 LEs                ; 18 LEs                 ; Yes        ; |Projeto_final|memory_acess:M_ACESS|reg_atual[0]            ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 6 LEs                ; 14 LEs                 ; Yes        ; |Projeto_final|memory_acess:M_ACESS|end_reg[0]              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Projeto_final|memory_acess:M_ACESS|reg_atual               ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |Projeto_final|Mux23                                        ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 96 LEs               ; 64 LEs                 ; No         ; |Projeto_final|Banco_Reg:B_REG|Mux15                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0|altsyncram_r881:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Source assignments for ram_valores:M_VAL|altsyncram:ram_image_rtl_0|altsyncram_bbe1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------+
+; Assignment                      ; Value              ; From ; To                                   ;
++---------------------------------+--------------------+------+--------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
++---------------------------------+--------------------+------+--------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram_valores:M_VAL ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                        ;
+; ADDR_WIDTH     ; 16    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram_comandos:INTRUCOES ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                             ;
+; ADDR_WIDTH     ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0        ;
++------------------------------------+-----------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                               ; Type           ;
++------------------------------------+-----------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                   ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                  ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                 ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                  ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                 ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                   ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                                 ; Untyped        ;
+; WIDTH_A                            ; 16                                                  ; Untyped        ;
+; WIDTHAD_A                          ; 16                                                  ; Untyped        ;
+; NUMWORDS_A                         ; 65536                                               ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                        ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                ; Untyped        ;
+; WIDTH_B                            ; 1                                                   ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                   ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                   ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                              ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                              ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                              ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                              ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                        ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                              ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                   ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                   ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                   ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                ; Untyped        ;
+; INIT_FILE                          ; db/Projeto_final.ram0_ram_comandos_617c3cb3.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                              ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                   ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                              ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                              ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                              ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                              ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                     ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                     ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                               ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                               ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                   ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                        ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_r881                                     ; Untyped        ;
++------------------------------------+-----------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ram_valores:M_VAL|altsyncram:ram_image_rtl_0            ;
++------------------------------------+----------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                              ; Type           ;
++------------------------------------+----------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                  ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                 ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                 ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                  ; Untyped        ;
+; OPERATION_MODE                     ; SINGLE_PORT                                        ; Untyped        ;
+; WIDTH_A                            ; 16                                                 ; Untyped        ;
+; WIDTHAD_A                          ; 16                                                 ; Untyped        ;
+; NUMWORDS_A                         ; 65536                                              ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                       ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                               ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                               ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                               ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                               ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                               ; Untyped        ;
+; WIDTH_B                            ; 1                                                  ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                  ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                  ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                             ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                             ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                             ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                             ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                       ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                             ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                               ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                               ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                               ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                               ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                               ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                               ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                  ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                  ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                               ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA                                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                               ; Untyped        ;
+; INIT_FILE                          ; db/Projeto_final.ram0_ram_valores_2dfd8cc9.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                             ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                  ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                             ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                             ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                             ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                             ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                    ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                    ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                              ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                              ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                  ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                       ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_bbe1                                    ; Untyped        ;
++------------------------------------+----------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                              ;
++-------------------------------------------+---------------------------------------------------+
+; Name                                      ; Value                                             ;
++-------------------------------------------+---------------------------------------------------+
+; Number of entity instances                ; 2                                                 ;
+; Entity Instance                           ; ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                               ;
+;     -- WIDTH_A                            ; 16                                                ;
+;     -- NUMWORDS_A                         ; 65536                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 1                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
+; Entity Instance                           ; ram_valores:M_VAL|altsyncram:ram_image_rtl_0      ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                       ;
+;     -- WIDTH_A                            ; 16                                                ;
+;     -- NUMWORDS_A                         ; 65536                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 1                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
++-------------------------------------------+---------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "modulo_saida:M_Saida" ;
++---------+-------+----------+---------------------+
+; Port    ; Type  ; Severity ; Details             ;
++---------+-------+----------+---------------------+
+; end_alg ; Input ; Info     ; Stuck at VCC        ;
+; t_alg   ; Input ; Info     ; Stuck at GND        ;
++---------+-------+----------+---------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "Registrador:ULA_REG_R" ;
++-------------+-------+----------+------------------+
+; Port        ; Type  ; Severity ; Details          ;
++-------------+-------+----------+------------------+
+; ld_r        ; Input ; Info     ; Stuck at VCC     ;
+; escolhido_r ; Input ; Info     ; Stuck at VCC     ;
++-------------+-------+----------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:Unid_LA"                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "Registrador:ULA_REG_B" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; ld_r ; Input ; Info     ; Stuck at VCC            ;
++------+-------+----------+-------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "Registrador:ULA_REG_A" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; ld_r ; Input ; Info     ; Stuck at VCC            ;
++------+-------+----------+-------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "ram_comandos:INTRUCOES" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; wren   ; Input ; Info     ; Stuck at GND           ;
+; data_i ; Input ; Info     ; Stuck at GND           ;
++--------+-------+----------+------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sat Dec 02 11:05:50 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto_final -c Projeto_final
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/memo_val/ram_valores.vhd
+    Info (12022): Found design unit 1: ram_valores-ram_arch
+    Info (12023): Found entity 1: ram_valores
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/memo_com/ram_comandos.vhd
+    Info (12022): Found design unit 1: ram_comandos-ram_arch
+    Info (12023): Found entity 1: ram_comandos
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/acess_memo/memory_acess.vhd
+    Info (12022): Found design unit 1: memory_acess-arch
+    Info (12023): Found entity 1: memory_acess
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/ula/ula.vhd
+    Info (12022): Found design unit 1: ULA-arch
+    Info (12023): Found entity 1: ULA
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/ula/fa.vhd
+    Info (12022): Found design unit 1: FA-s
+    Info (12023): Found entity 1: FA
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/ula/el.vhd
+    Info (12022): Found design unit 1: EL-arch
+    Info (12023): Found entity 1: EL
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/ula/ea.vhd
+    Info (12022): Found design unit 1: EA-arch
+    Info (12023): Found entity 1: EA
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/ula/deslocador.vhd
+    Info (12022): Found design unit 1: deslocador-arch
+    Info (12023): Found entity 1: deslocador
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/mod_sai/modulo_saida.vhd
+    Info (12022): Found design unit 1: modulo_saida-arch
+    Info (12023): Found entity 1: modulo_saida
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/mod_ent/modulo_entrada.vhd
+    Info (12022): Found design unit 1: Modulo_entrada-arch
+    Info (12023): Found entity 1: Modulo_entrada
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_g.vhd
+    Info (12022): Found design unit 1: Display_G-arch
+    Info (12023): Found entity 1: Display_G
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_f.vhd
+    Info (12022): Found design unit 1: Display_F-arch
+    Info (12023): Found entity 1: Display_F
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_e.vhd
+    Info (12022): Found design unit 1: Display_E-arch
+    Info (12023): Found entity 1: Display_E
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_d.vhd
+    Info (12022): Found design unit 1: Display_D-arch
+    Info (12023): Found entity 1: Display_D
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_c.vhd
+    Info (12022): Found design unit 1: Display_C-arch
+    Info (12023): Found entity 1: Display_C
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_b.vhd
+    Info (12022): Found design unit 1: Display_B-arch
+    Info (12023): Found entity 1: Display_B
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display_a.vhd
+    Info (12022): Found design unit 1: Display_A-arch
+    Info (12023): Found entity 1: Display_A
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/display/display.vhd
+    Info (12022): Found design unit 1: Display-arch
+    Info (12023): Found entity 1: Display
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/cont_sin/registrador.vhd
+    Info (12022): Found design unit 1: Registrador_s-arch
+    Info (12023): Found entity 1: Registrador_s
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/cont_sin/contador_s_cd.vhd
+    Info (12022): Found design unit 1: Contador_S_CD-arch
+    Info (12023): Found entity 1: Contador_S_CD
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/banco_reg/registrador.vhd
+    Info (12022): Found design unit 1: Registrador-arch
+    Info (12023): Found entity 1: Registrador
+Info (12021): Found 2 design units, including 1 entities, in source file modulos/banco_reg/banco_reg.vhd
+    Info (12022): Found design unit 1: Banco_Reg-arch
+    Info (12023): Found entity 1: Banco_Reg
+Info (12021): Found 2 design units, including 1 entities, in source file projeto_final.vhd
+    Info (12022): Found design unit 1: Projeto_final-arch
+    Info (12023): Found entity 1: Projeto_final
+Info (12127): Elaborating entity "Projeto_final" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Projeto_final.vhd(135): object "OVERFLOW" assigned a value but never read
+Info (12128): Elaborating entity "Modulo_entrada" for hierarchy "Modulo_entrada:M_Entrada"
+Info (12128): Elaborating entity "ram_valores" for hierarchy "ram_valores:M_VAL"
+Info (12128): Elaborating entity "ram_comandos" for hierarchy "ram_comandos:INTRUCOES"
+Info (12128): Elaborating entity "memory_acess" for hierarchy "memory_acess:M_ACESS"
+Info (12128): Elaborating entity "Banco_Reg" for hierarchy "Banco_Reg:B_REG"
+Info (12128): Elaborating entity "Registrador" for hierarchy "Banco_Reg:B_REG|Registrador:i0"
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:Unid_LA"
+Info (12128): Elaborating entity "EA" for hierarchy "ULA:Unid_LA|EA:a0"
+Info (12128): Elaborating entity "EL" for hierarchy "ULA:Unid_LA|EL:l0"
+Info (12128): Elaborating entity "FA" for hierarchy "ULA:Unid_LA|FA:s0"
+Info (12128): Elaborating entity "deslocador" for hierarchy "ULA:Unid_LA|deslocador:d0"
+Info (12128): Elaborating entity "modulo_saida" for hierarchy "modulo_saida:M_Saida"
+Info (12128): Elaborating entity "Display" for hierarchy "modulo_saida:M_Saida|Display:dS0"
+Info (12128): Elaborating entity "Display_A" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_A:i0"
+Info (12128): Elaborating entity "Display_B" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_B:i1"
+Info (12128): Elaborating entity "Display_C" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_C:i2"
+Info (12128): Elaborating entity "Display_D" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_D:i3"
+Info (12128): Elaborating entity "Display_E" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_E:i4"
+Info (12128): Elaborating entity "Display_F" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_F:i5"
+Info (12128): Elaborating entity "Display_G" for hierarchy "modulo_saida:M_Saida|Display:dS0|Display_G:i6"
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram_comandos:INTRUCOES|ram_image_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 16
+        Info (286033): Parameter NUMWORDS_A set to 65536
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/Projeto_final.ram0_ram_comandos_617c3cb3.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ram_valores:M_VAL|ram_image_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 16
+        Info (286033): Parameter NUMWORDS_A set to 65536
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/Projeto_final.ram0_ram_valores_2dfd8cc9.hdl.mif
+Info (12130): Elaborated megafunction instantiation "ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0"
+Info (12133): Instantiated megafunction "ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "16"
+    Info (12134): Parameter "NUMWORDS_A" = "65536"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/Projeto_final.ram0_ram_comandos_617c3cb3.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r881.tdf
+    Info (12023): Found entity 1: altsyncram_r881
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_k8a.tdf
+    Info (12023): Found entity 1: decode_k8a
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_qob.tdf
+    Info (12023): Found entity 1: mux_qob
+Info (12130): Elaborated megafunction instantiation "ram_valores:M_VAL|altsyncram:ram_image_rtl_0"
+Info (12133): Instantiated megafunction "ram_valores:M_VAL|altsyncram:ram_image_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "16"
+    Info (12134): Parameter "NUMWORDS_A" = "65536"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/Projeto_final.ram0_ram_valores_2dfd8cc9.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_bbe1.tdf
+    Info (12023): Found entity 1: altsyncram_bbe1
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rsa.tdf
+    Info (12023): Found entity 1: decode_rsa
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED_TERMINO" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1104 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 77 output pins
+    Info (21061): Implemented 749 logic cells
+    Info (21064): Implemented 256 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 536 megabytes
+    Info: Processing ended: Sat Dec 02 11:05:57 2017
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+

@@ -1,0 +1,112 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY ULA IS	-- Unidade Lógica e Aritimética
+	PORT (A,B: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+			SELETOR: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			SAIDA: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+			COUT: OUT STD_LOGIC);
+END;
+
+ARCHITECTURE arch OF ULA IS
+	COMPONENT FA
+		PORT ( A, B, Cin: IN STD_LOGIC;
+		S, Cout: OUT STD_LOGIC);
+	END COMPONENT;
+	
+	COMPONENT EA
+		PORT (B: IN STD_LOGIC;
+			S: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			SAIDA: OUT STD_LOGIC);
+	END COMPONENT;
+	
+	COMPONENT EL
+		PORT (A,B: IN STD_LOGIC;
+			S: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			SAIDA: OUT STD_LOGIC);
+	END COMPONENT;	
+	
+	COMPONENT deslocador
+	PORT (ENTRA: IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+			SELETOR: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			SAI: OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
+	END COMPONENT;
+	
+SIGNAL sig_EA:			STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sig_EL:			STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+SIGNAL sig_FA:			STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+SIGNAL sig_Desl:		STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL desc:			STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+SIGNAL carry:			STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+SIGNAL cout_s:			STD_LOGIC;
+
+BEGIN
+		--		Extensor Aritmético		--
+	a0:  EA PORT MAP (B(0) , M, SELETOR, sig_EA(0));
+	a1:  EA PORT MAP (B(1) , M, SELETOR, sig_EA(1));
+	a2:  EA PORT MAP (B(2) , M, SELETOR, sig_EA(2));
+	a3:  EA PORT MAP (B(3) , M, SELETOR, sig_EA(3));
+	a4:  EA PORT MAP (B(4) , M, SELETOR, sig_EA(4));
+	a5:  EA PORT MAP (B(5) , M, SELETOR, sig_EA(5));
+	a6:  EA PORT MAP (B(6) , M, SELETOR, sig_EA(6));
+	a7:  EA PORT MAP (B(7) , M, SELETOR, sig_EA(7));
+	a8:  EA PORT MAP (B(8) , M, SELETOR, sig_EA(8));
+	a9:  EA PORT MAP (B(9) , M, SELETOR, sig_EA(9));
+	a10: EA PORT MAP (B(10), M, SELETOR, sig_EA(10));
+	a11: EA PORT MAP (B(11), M, SELETOR, sig_EA(11));
+	a12: EA PORT MAP (B(12), M, SELETOR, sig_EA(12));
+	a13: EA PORT MAP (B(13), M, SELETOR, sig_EA(13));
+	a14: EA PORT MAP (B(14), M, SELETOR, sig_EA(14));
+	a15: EA PORT MAP (B(15), M, SELETOR, sig_EA(15));
+
+	--			Extensor Lógico		--
+	l0:  EL PORT MAP (A(0) , B(0) , M, SELETOR, sig_EL(0));
+	l1:  EL PORT MAP (A(1) , B(1) , M, SELETOR, sig_EL(1));
+	l2:  EL PORT MAP (A(2) , B(2) , M, SELETOR, sig_EL(2));
+	l3:  EL PORT MAP (A(3) , B(3) , M, SELETOR, sig_EL(3));
+	l4:  EL PORT MAP (A(4) , B(4) , M, SELETOR, sig_EL(4));
+	l5:  EL PORT MAP (A(5) , B(5) , M, SELETOR, sig_EL(5));
+	l6:  EL PORT MAP (A(6) , B(6) , M, SELETOR, sig_EL(6));
+	l7:  EL PORT MAP (A(7) , B(7) , M, SELETOR, sig_EL(7));
+	l8:  EL PORT MAP (A(8) , B(8) , M, SELETOR, sig_EL(8));
+	l9:  EL PORT MAP (A(9) , B(9) , M, SELETOR, sig_EL(9));
+	l10: EL PORT MAP (A(10), B(10), M, SELETOR, sig_EL(10));
+	l11: EL PORT MAP (A(11), B(11), M, SELETOR, sig_EL(11));
+	l12: EL PORT MAP (A(12), B(12), M, SELETOR, sig_EL(12));
+	l13: EL PORT MAP (A(13), B(13), M, SELETOR, sig_EL(13));
+	l14: EL PORT MAP (A(14), B(14), M, SELETOR, sig_EL(14));
+	l15: EL PORT MAP (A(15), B(15), M, SELETOR, sig_EL(15));
+	
+	carry(0) <= NOT M AND NOT SELETOR(1) AND SELETOR(0);
+	
+	--			Somador		--
+	s0 : FA PORT MAP (sig_EL(0) , sig_EA(0) , carry(0) , sig_Desl(0) , carry(1));
+	s1 : FA PORT MAP (sig_EL(1) , sig_EA(1) , carry(1) , sig_Desl(1) , carry(2));
+	s2 : FA PORT MAP (sig_EL(2) , sig_EA(2) , carry(2) , sig_Desl(2) , carry(3));
+	s3 : FA PORT MAP (sig_EL(3) , sig_EA(3) , carry(3) , sig_Desl(3) , carry(4));
+	s4 : FA PORT MAP (sig_EL(4) , sig_EA(4) , carry(4) , sig_Desl(4) , carry(5));
+	s5 : FA PORT MAP (sig_EL(5) , sig_EA(5) , carry(5) , sig_Desl(5) , carry(6));
+	s6 : FA PORT MAP (sig_EL(6) , sig_EA(6) , carry(6) , sig_Desl(6) , carry(7));
+	s7 : FA PORT MAP (sig_EL(7) , sig_EA(7) , carry(7) , sig_Desl(7) , carry(8));
+	s8 : FA PORT MAP (sig_EL(8) , sig_EA(8) , carry(8) , sig_Desl(8) , carry(9));
+	s9 : FA PORT MAP (sig_EL(9) , sig_EA(9) , carry(9) , sig_Desl(9) , carry(10));
+	s10: FA PORT MAP (sig_EL(10), sig_EA(10), carry(10), sig_Desl(10), carry(11));
+	s11: FA PORT MAP (sig_EL(11), sig_EA(11), carry(11), sig_Desl(11), carry(12));
+	s12: FA PORT MAP (sig_EL(12), sig_EA(12), carry(12), sig_Desl(12), carry(13));
+	s13: FA PORT MAP (sig_EL(13), sig_EA(13), carry(13), sig_Desl(13), carry(14));
+	s14: FA PORT MAP (sig_EL(14), sig_EA(14), carry(14), sig_Desl(14), carry(15));	
+	s15: FA PORT MAP (sig_EL(15), sig_EA(15), carry(15), sig_Desl(15), cout_s);
+
+	desc(1) <= NOT S(3) AND S(2) AND NOT S(1) AND S(0);	-- Dividir
+	desc(0) <= NOT S(3) AND S(2) AND S(1) AND NOT S(0);	-- Multiplicar
+	
+		--			Deslocador		--
+	d0: deslocador PORT MAP (sig_Desl, desc ,SAIDA);
+	
+	COUT <= carry(0) AND ( cout_s XOR carry(15) ) OR ( NOT carry(0) AND cout_s );
+	
+END arch;

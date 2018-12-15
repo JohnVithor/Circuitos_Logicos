@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Projeto_final">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Projeto_final|ram_comandos:INTRUCOES|altsyncram:ram_image_rtl_0" CBX_FILE_NAME="altsyncram_r881.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Projeto_final|ram_valores:M_VAL|altsyncram:ram_image_rtl_0" CBX_FILE_NAME="altsyncram_bbe1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

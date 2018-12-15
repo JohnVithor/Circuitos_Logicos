@@ -1,0 +1,81 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY Display IS
+	PORT (W,X,Y,Z: IN STD_LOGIC;
+			A,B,C,D,E,F,G: OUT STD_LOGIC);
+END;
+
+ARCHITECTURE arch OF Display IS
+	COMPONENT Display_A
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					A: OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT Display_B
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					B: OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT Display_C
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					C: OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT Display_D
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					D: OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT Display_E
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					E: OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT Display_F
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					F: OUT STD_LOGIC);
+	END COMPONENT;
+	COMPONENT Display_G
+		PORT ( 	W,X,Y,Z: IN STD_LOGIC;
+					G: OUT STD_LOGIC);
+	END COMPONENT;
+BEGIN
+
+i0: Display_A PORT MAP (W,X,Y,Z,	A);
+i1: Display_B PORT MAP (W,X,Y,Z,	B);
+i2: Display_C PORT MAP (W,X,Y,Z,	C);
+i3: Display_D PORT MAP (W,X,Y,Z,	D);
+i4: Display_E PORT MAP (W,X,Y,Z,	E);
+i5: Display_F PORT MAP (W,X,Y,Z,	F);
+i6: Display_g PORT MAP (W,X,Y,Z,	G);
+	
+END arch;
+
+	SEG_A = (W AND NOT Z) OR (Y AND NOT Z) OR (NOT W AND Y) OR (X AND Y) OR (NOT W AND X AND Z) OR (NOT W AND NOT X AND NOT Z) OR (W AND NOT X AND NOT Y)
+	SEG_B =
+	SEG_C =
+	SEG_D =
+	SEG_E = 
+	SEG_F = 
+	SEG_G = 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

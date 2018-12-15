@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dJ:\Codigos BTI\LCL\projeto final\simulation\qsim
+vProjeto_final
+Z1 !s100 OZ1bDR_Z=Zl5aRkJeS>FA3
+Z2 IWWV=[^e8750naegG@d^472
+Z3 V^l2BOBi[Th=YUJ2BC7ke;2
+Z4 dJ:\Codigos BTI\LCL\Projeto-Final-Circuitos\simulation\qsim
+Z5 w1512223136
+Z6 8Projeto_final.vo
+Z7 FProjeto_final.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Projeto_final.vo|
+Z10 o-work work -O0
+Z11 n@projeto_final
+!i10b 1
+!s85 0
+Z12 !s108 1512223137.574000
+Z13 !s107 Projeto_final.vo|
+!s101 -O0
+vProjeto_final_vlg_check_tst
+!i10b 1
+Z14 !s100 j^CMZ=X_Mh<Dh=^JA3;?c0
+Z15 II9eXeBnT9X9=acN_YXo@30
+Z16 VH8BF=QM746LR7G1fVjY7;1
+R4
+Z17 w1512223134
+Z18 8Projeto_final.vt
+Z19 FProjeto_final.vt
+L0 69
+R8
+r1
+!s85 0
+31
+Z20 !s108 1512223138.301000
+Z21 !s107 Projeto_final.vt|
+Z22 !s90 -work|work|Projeto_final.vt|
+!s101 -O0
+R10
+Z23 n@projeto_final_vlg_check_tst
+vProjeto_final_vlg_sample_tst
+!i10b 1
+Z24 !s100 nIUBZg]njY`GL1U5L1VAA3
+Z25 IELbAhn`GE0^je31KNTWmL2
+Z26 VagCL2Nz_gNXfWo4`Q2hUG1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@projeto_final_vlg_sample_tst
+vProjeto_final_vlg_vec_tst
+!i10b 1
+!s100 N5VSOD0c3>AjQQm;MLibF0
+IB9HbYe7OYF7Ikd:e0Q8JB2
+Z28 Vg9bU_OIVg3k<1J1J@O<D60
+R4
+R17
+R18
+R19
+Z29 L0 1588
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@projeto_final_vlg_vec_tst
